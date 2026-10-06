@@ -28,4 +28,4 @@ sorted_digits = sorted(number_input)
 ordered_number = "".join(sorted_digits)
 
 # 3. Output: Display the result with a message
-print("Success! Your digits have been sorted in ascending order:", ordered_number)
+print("Success! Your digits have been sorted in ascending order:", {ordered_number})
