@@ -1,0 +1,63 @@
+# 1. In:
+# Hardcoded initial list of items (text string or numeric depending on context). No user input is required at run time.
+
+# 2. Process:
+# Creates a list of at least eight items related to a business field.
+# Displays the whole list, extracts a chosen item by index, sorts the list in alphabetical order using sorted(), 
+# and computes a aggregated metric (total/average/max length) from the collection.
+
+# 3. Out:
+# - The complete original list
+# - One selected item from the list
+# - The list sorted alphabetically
+# - The calculated result (e.g., total marketing budget, total ad spending, or average string character length)
+
+# 4. What my list is about, and what I computed from it:
+# List Topic: E-commerce Marketing Channels & Ad Spend Budgets (in EUR).
+# Computed metric: Total Monthly Marketing Budget.
+# Why it is interesting: In digital marketing management, tracking total spend across active channels 
+# allows managers to optimize budget allocation and calculate ROI across platforms.
+
+# Observation Comments for "CHECK IT YOURSELF":
+# Hand calculation on 3 sample channel budgets:
+# Channel 1: Search Ads = 4500
+# Channel 2: Social Media = 3200
+# Channel 3: Email Campaign = 1500
+# Sum of sample 3: 4500 + 3200 + 1500 = 9200
+# Python calculation matches hand calculations exactly across all list items.
+
+# Your code below
+
+# List of 8 digital marketing channel monthly budgets (EUR)
+marketing_channels = [
+    "Search Engine Ads",
+    "Social Media Ads",
+    "Email Marketing",
+    "Influencer Sponsorships",
+    "Affiliate Marketing",
+    "Display Banners",
+    "Content SEO",
+    "Video Campaigns"
+]
+
+budgets = [4500, 3200, 1500, 2800, 2100, 1800, 1200, 5000]
+
+# 1. Display the whole list
+print("Full List of Active Marketing Channels:")
+print(marketing_channels)
+print()
+
+# 2. Display one item of your choice (e.g., item at index 1: Social Media Ads)
+chosen_channel = marketing_channels[1]
+print(f"Selected Channel (Index 1): {chosen_channel}")
+print()
+
+# 3. Display the list sorted alphabetically
+sorted_channels = sorted(marketing_channels)
+print("Channels Sorted Alphabetically:")
+print(sorted_channels)
+print()
+
+# 4. Display something computed from it (Total monthly budget allocated)
+total_budget = sum(budgets)
+print(f"Total Monthly Marketing Budget Computed: €{total_budget:,}")

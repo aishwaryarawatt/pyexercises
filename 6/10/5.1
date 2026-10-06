@@ -1,0 +1,44 @@
+# 1. In:
+# The list of digital marketing channels (text strings) and their respective budgets (numeric values in EUR) 
+# copied directly from exercise 4.0.
+
+# 2. Process:
+# Uses a loop (e.g., for loop with enumerate() or zip()) to process every item in the collection.
+# For each channel, it extracts its position/index (adding 1 for 1-based display position) and computes 
+# a metric relative to that specific item.
+
+# 3. Out:
+# Exactly 8 formatted lines printed to the console (one line per marketing channel).
+# Each line displays: Position Number, Channel Name, Budget, and its computed Share of the Total Budget (%).
+
+# 4. What I compute for each item, and why it is worth showing:
+# Decision: Computed the percentage share (%) that each individual channel represents out of the total marketing budget (€22,100).
+# Why it is worth showing: In marketing budget allocation, understanding the proportional share of total spend 
+# per channel helps managers identify key budget drivers versus low-investment channels.
+
+# Your code below
+
+# List copied directly from Exercise 4.0
+marketing_channels = [
+    "Search Engine Ads",
+    "Social Media Ads",
+    "Email Marketing",
+    "Influencer Sponsorships",
+    "Affiliate Marketing",
+    "Display Banners",
+    "Content SEO",
+    "Video Campaigns"
+]
+
+budgets = [4500, 3200, 1500, 2800, 2100, 1800, 1200, 5000]
+
+# Pre-compute total budget across all channels
+total_budget = sum(budgets)
+
+# Iterate over every item in the list using zip and enumerate
+for index, (channel, budget) in enumerate(zip(marketing_channels, budgets), start=1):
+    # Compute something about each item: share of total budget (%)
+    share_of_total = (budget / total_budget) * 100
+    
+    # Display line combining position, item name, and computed share
+    print(f"Position {index}: {channel:<25} | Budget: €{budget:>5,} | Share: {share_of_total:>5.2f}%")

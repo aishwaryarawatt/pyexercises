@@ -1,0 +1,43 @@
+# 1. In:
+# An integer representing a person's age entered by the user via input().
+
+# 2. Process:
+# Converts the user input into an integer.
+# Uses an if-elif-else conditional structure to test which age range the number falls into.
+
+# 3. Out:
+# A specific message displayed on the terminal corresponding to the identified life stage/age group.
+
+# 4. My ranges, my boundaries, my messages:
+# - Range 1 (0 to 12): "Enfant - Enjoy the carefree childhood days!"
+# - Range 2 (13 to 19): "Teen/Tween - Navigating the teenage years!"
+# - Range 3 (20 to 39): "Young Adult - Building your career and personal life!"
+# - Range 4 (40 to 99): "Middle Aged / Senior - Gaining wisdom and experience!"
+# - Range 5 (100+): "Immortal - You have reached legendary age!"
+# Exact Boundaries: 13, 20, 40, and 100.
+# Boundary logic: Values exactly on a boundary belong to the higher category (e.g., exactly 13 is a Teen).
+
+# Observation Comments for "CHECK IT YOURSELF":
+# Boundary Tests for Threshold 20 (Young Adult cutoff):
+# - Age 19: Output -> Teen/Tween (Landed where intended: lower range)
+# - Age 20: Output -> Young Adult (Landed where intended: boundary value belongs to upper range)
+# - Age 21: Output -> Young Adult (Landed where intended: upper range)
+
+# Your code below
+
+age_input = input("Enter your age: ")
+age = int(age_input)
+
+# Check ranges using if-elif-else logic
+if age < 0:
+    print("Invalid age entered. Age cannot be negative.")
+elif age < 13:
+    print("Enfant - Enjoy the carefree childhood days!")
+elif age < 20: # Covers ages 13 to 19
+    print("Teen/Tween - Navigating the teenage years!")
+elif age < 40: # Covers ages 20 to 39
+    print("Young Adult - Building your career and personal life!")
+elif age < 100: # Covers ages 40 to 99
+    print("Middle Aged / Senior - Gaining wisdom and experience!")
+else: # 100 and above
+    print("Immortal - You have reached legendary age!")

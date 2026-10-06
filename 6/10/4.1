@@ -1,0 +1,72 @@
+# 1. In:
+# The original list of 8 items built in exercise 4.0.
+
+# 2. Process:
+# Displays the list in four different orders using various reordering operations:
+# - sorted(): Returns a new list sorted alphabetically (temporary copy).
+# - sorted(..., reverse=True): Returns a new list sorted in reverse alphabetical order (temporary copy).
+# - reversed() / list(reversed()): Returns a new list in reversed sequence order (temporary copy).
+# - .reverse() or .sort(): Modifies the original list in place directly.
+# Finally, prints the original list to prove it remains intact and unmodified.
+
+# 3. Out:
+# - Four versions of the list displayed in different orders.
+# - A final verification print of the original list in its exact initial state.
+
+# 4. My four orders, and which ones modify the original:
+# Order 1: Alphabetical order using sorted(marketing_channels) -> Returns a copy (Original NOT modified).
+# Order 2: Reverse alphabetical order using sorted(marketing_channels, reverse=True) -> Returns a copy (Original NOT modified).
+# Order 3: Reverse sequence order using list(reversed(marketing_channels)) -> Returns a copy (Original NOT modified).
+# Order 4: Permanent reverse sequence using marketing_channels.reverse() -> MODIFIES THE ORIGINAL LIST IN PLACE.
+# (To satisfy the prompt requirement that the original survives undamaged, we re-reverse it back, or use list slicing [::-1] as a non-modifying alternative).
+
+# Your code below
+
+# Original list from Exercise 4.0
+marketing_channels = [
+    "Search Engine Ads",
+    "Social Media Ads",
+    "Email Marketing",
+    "Influencer Sponsorships",
+    "Affiliate Marketing",
+    "Display Banners",
+    "Content SEO",
+    "Video Campaigns"
+]
+
+# Keep an explicit copy or reference to verify at the end
+print("0. Original List (as created in 4.0):")
+print(marketing_channels)
+print("-" * 50)
+
+# Order 1: Alphabetical Order (using sorted() - returns a copy)
+order1 = sorted(marketing_channels)
+print("1. Alphabetical Order (sorted() - non-modifying copy):")
+print(order1)
+print()
+
+# Order 2: Reverse Alphabetical Order (using sorted(..., reverse=True) - returns a copy)
+order2 = sorted(marketing_channels, reverse=True)
+print("2. Reverse Alphabetical Order (sorted() with reverse=True - non-modifying copy):")
+print(order2)
+print()
+
+# Order 3: Reverse Order of Appearance (using slicing [::-1] - returns a copy)
+order3 = marketing_channels[::-1]
+print("3. Reverse Sequence Order (slicing [::-1] - non-modifying copy):")
+print(order3)
+print()
+
+# Order 4: Modified In Place via .reverse(), then restored back
+# Note: .reverse() mutates the list directly rather than creating a copy!
+print("4. Applying .reverse() (In-place modification):")
+marketing_channels.reverse()
+print("   List while temporarily reversed:", marketing_channels)
+# Reversing again to restore it to original state:
+marketing_channels.reverse()
+print()
+
+# CHECK IT YOURSELF: Prove the original list is undamaged
+print("=" * 50)
+print("FINAL CHECK - Original List (Must match 4.0 exactly item by item):")
+print(marketing_channels) 

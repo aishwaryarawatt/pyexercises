@@ -1,0 +1,60 @@
+# 1. In:
+# Numbers entered repeatedly by the user via input().
+
+# 2. Process:
+# Uses a while loop that increments an attempt counter each time.
+# Checks if the entered number is a positive perfect square (e.g., 4, 9, 16, 25).
+# Stops when a perfect square is provided OR when the attempt limit (5 attempts) is reached.
+
+# 3. Out:
+# A final summary displaying total attempts made, whether the loop ended by meeting the condition or hitting the limit, and the values tried.
+
+# 4. My stop condition, my attempt limit, my summary:
+# Stop condition: User enters a valid perfect square (e.g., 16, 25, 36).
+# Maximum attempts: 5 attempts.
+# Handling limit: Program terminates with a safety warning message: "Maximum attempts reached without finding a perfect square."
+# Summary contains: Number of attempts, final status (Success/Failed), and the stopping number if successful.
+
+# Observation Comments for "CHECK IT YOURSELF":
+# - Never give expected answer test (e.g., entering 2, 3, 5, 7, 10): 
+#   The loop terminates safely after attempt 5 with the failure limit message.
+# - Successful test (e.g., entering 3, then 16): 
+#   The loop terminates immediately on attempt 2 and displays the summary report.
+
+# Your code below
+import math
+
+attempts = 0
+max_attempts = 5
+found_perfect_square = False
+chosen_number = None
+
+print(f"Goal: Enter a perfect square number (e.g., 4, 9, 16, 25). You have {max_attempts} attempts.")
+
+while attempts < max_attempts and not found_perfect_square:
+    attempts += 1
+    user_input = input(f"Attempt {attempts}/{max_attempts} - Enter a number: ").strip()
+    
+    # Check if input is a valid positive integer
+    if user_input.isdigit():
+        num = int(user_input)
+        # Check for perfect square
+        root = math.isqrt(num)
+        if root * root == num:
+            found_perfect_square = True
+            chosen_number = num
+        else:
+            print(f"-> {num} is NOT a perfect square. Try again.")
+    else:
+        print("-> Invalid input! Please enter a non-negative integer.")
+
+# Display summary at the end
+print("\n" + "=" * 40)
+print("LOOP SUMMARY REPORT")
+print("=" * 40)
+print(f"Total Attempts Used: {attempts} of {max_attempts}")
+
+if found_perfect_square:
+    print(f"Result: SUCCESS! You entered {chosen_number}, which is a perfect square ({int(math.sqrt(chosen_number))} x {int(math.sqrt(chosen_number))}).")
+else:
+    print("Result: STOPPED - Reached maximum allowed attempts without a perfect square.")
