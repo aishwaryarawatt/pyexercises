@@ -1,0 +1,31 @@
+# 1. In:
+# A text sentence typed by the user.
+
+# 2. Process:
+# Applies four string transformation methods (.upper(), .lower(), .title(), and .replace()) to format the input string.
+
+# 3. Out:
+# Prints each of the four transformed strings on individual lines in the output terminal.
+
+# 4. My four transformations, and when each is useful:
+# - .upper(): Useful for creating bold headlines or emphasizing urgent notifications.
+# - .lower(): Useful for normalizing user inputs (like email addresses) before storing or comparing them.
+# - .title(): Useful for correctly formatting names, article titles, or proper nouns.
+# - .replace(" ", "_"): Useful for generating valid file names, database keys, or URL slugs from plain text.
+
+# Observation Comments for "CHECK IT YOURSELF":
+# Sentence tested: "  hello World  "
+# - .upper() produced "  HELLO WORLD  ": Preserved extra spaces and converted all characters to uppercase as expected.
+# - .lower() produced "  hello world  ": Preserved extra spaces and converted the capitalized 'W' to lowercase as expected.
+# - .title() produced "  Hello World  ": Preserved outer spaces and capitalized 'Hello' while keeping 'World' title-cased as expected.
+# - .replace(" ", "_") produced "__hello_World__": Replaced every single space (including leading/trailing spaces) with an underscore as expected.
+
+
+# Your code below
+
+user_sentence = input("Enter a sentence: ")
+
+print("1. Uppercase:", user_sentence.upper())
+print("2. Lowercase:", user_sentence.lower())
+print("3. Title Case:", user_sentence.title())
+print("4. Underscores:", user_sentence.replace(" ", "_"))

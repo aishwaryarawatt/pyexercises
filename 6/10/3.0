@@ -1,0 +1,37 @@
+# 1. In:
+# Two numbers entered by the user (num1 and num2).
+
+# 2. Process:
+# Uses while loops to repeatedly prompt the user until non-zero numbers are provided.
+# Then computes four basic arithmetic operations: addition, subtraction, multiplication, and division.
+
+# 3. Out:
+# The mathematical results of all four operations printed to the console.
+
+# 4. What happens when the second number is zero, and why:
+# Decision: Refuse zero for either number and ask the user again.
+# Reason: Division by zero is mathematically undefined and causes a ZeroDivisionError in Python. 
+# Prompting until a valid non-zero number is given ensures the program never crashes.
+
+# Observation Comments for "CHECK IT YOURSELF":
+# - 7 divided by 2: Python's / operator performs "true division" and returns 3.5 (a float), not 3.
+#   (If it showed 3, it would be integer/floor division using //).
+# - Entering 0 as the second number: The program catches 0, prints an error message, and re-prompts the user until a non-zero number is entered.
+
+
+# Your code below
+
+num1 = float(input("Enter the first number (cannot be 0): "))
+while num1 == 0:
+    print("Error: The first number cannot be zero.")
+    num1 = float(input("Please enter a non-zero first number: "))
+
+num2 = float(input("Enter the second number (cannot be 0): "))
+while num2 == 0:
+    print("Error: The second number cannot be zero.")
+    num2 = float(input("Please enter a non-zero second number: "))
+
+print("1. Addition (+):", num1 + num2)
+print("2. Subtraction (-):", num1 - num2)
+print("3. Multiplication (*):", num1 * num2)
+print("4. Division (/):", num1 / num2)

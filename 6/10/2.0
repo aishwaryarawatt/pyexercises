@@ -1,0 +1,27 @@
+# 1. In:
+# Two inputs from the user: full_name (text string) and mobile_number (converted to an integer/number).
+
+# 2. Process:
+# Asks the user for both inputs sequentially. Converts mobile_number to an integer and adds 1 to test numeric addition as requested by the exercise instructions.
+
+# 3. Out:
+# A combined sentence printed to the console displaying both the name and the updated phone number.
+
+# 4. My two fields, and what I would do with them:
+# Full Name & Mobile Number. In a real company (e.g., CRM or customer support platform), I would use these to look up customer records or send SMS order confirmations.
+
+# Observation Comments for "CHECK IT YOURSELF":
+# - Empty line: Raises a ValueError when attempting int(""), as Python cannot convert an empty string to an integer.
+# - Space: Raises a ValueError when attempting int(" "), as whitespace cannot be converted to an integer.
+# - Text: Raises a ValueError when typing letters (e.g., "hello"), as string characters cannot be parsed as a base-10 integer.
+
+
+# Your code below
+
+full_name = input("Enter your full name: ")
+mobile_number = int(input("Enter your mobile number: "))
+
+# Testing adding 1 as requested by the prompt
+updated_number = mobile_number + 1
+
+print(f"Customer {full_name} has been updated in the system. Verification code sent to {updated_number}.")
